@@ -3,6 +3,7 @@
 // @namespace    your-namespace
 // @version      1.0
 // @description  划线选中文字时，自动将选中的文字转化为语音播放，并提供播放/停止按钮。
+// @author       OHNII
 // @match        *://*/*
 // @grant        GM_xmlhttpRequest
 // ==/UserScript==
