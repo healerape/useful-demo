@@ -1,0 +1,41 @@
+
+{
+  "manifest_version": 3,
+
+  "name": "我的插件包", 
+  "version": "1.0",
+  "description": "没想好做啥内容惹",
+
+  "icons": {
+      "16": "icons/icon48.png",
+      "32": "icons/icon48.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background/background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+      {
+          "matches": ["<all_urls>"],
+          "js": ["content_scripts/content.js", "content_scripts/line.js"]
+      },
+      {
+          "matches": ["*://www.bilibili.com/*"],
+          "js": ["content_scripts/speed.js"]
+      }
+  ],
+  "permissions": [
+      "background", 
+      "activeTab",
+      "cookies",
+      "tabs",
+      "storage"
+  ],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "author": "OHNII"
+}
